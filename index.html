@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiketin. | Best Streaming Film</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/helvetica-neue-55"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-glass">
+        <div class="container-fluid px-5">
+          <a class="navbar-brand col-7 d-inline-flex align-items-center gap-1" href="#">
+            <img src="Assets/Img/Icons/ticket.svg" alt="Tickets" width="30" height="30">
+            Tiketin.
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <form class="d-flex my-2 my-lg-0 " role="search"></form>
+            <input class="form-control" style="max-width: 400px;" type="search" placeholder="Search Film" aria-label="Search">
+            </form>
+            <ul class="navbar-nav ms-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tickets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </nav>
+    <main>
+      <section class="container-fluid">
+        <div class="row my-4 p-5">
+            <div class="d.flex flex-column align-items-center ">
+                <h1 class="glowing-text">Apa yang ingin <br> Anda tonton hari ini ?</h1>
+            </div>
+        </div> 
+      </section>
+      <section class="container-fluid px-xl-5 px-sm-4">
+       <div class="row justify-content-xl-start justify-content-center" id="movie-list"></div>
+      </section>
+      <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content glass-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Your Ticket</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="movieTitle" class="form-label">Movie Title</label>
+                        <input type="text" class="form-control form-control-glass" id="movieTitle" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control form-control-glass" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="seats" class="form-label">Number of Seats</label>
+                        <input type="number" class="form-control form-control-glass" id="seats" required min="1" max="10">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-glass-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-glass-primary" onclick="bookTicket()">Book Ticket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

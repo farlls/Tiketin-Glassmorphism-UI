@@ -1,0 +1,337 @@
+// Import Bootstrap functions and variables
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+// Override Bootstrap variables
+$theme-colors: (
+  "primary": #7a1cac,
+  // Ungu
+);
+
+// Override the default Bootstrap font
+$font-family: "Helvetica Neue", sans-serif;
+
+// Import the rest of Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background: linear-gradient(
+    135deg,
+    #0a0a1f 0%,
+    // Biru sangat gelap, hampir hitam
+    #1a1a3a 25%,
+    // Biru gelap
+    #0f0f2f 50%,
+    // Biru tengah-gelap
+    #050510 75%,
+    // Biru sangat gelap, mendekati hitam
+    #000000 100% // Hitam
+  );
+  background-size: 400% 400%;
+  min-height: 100vh;
+  color: #d8d8eb; 
+  animation: gradientMove 20s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Optional: Menambahkan efek blur pada elemen dengan warna yang lebih gelap
+.glass-effect {
+  background: rgba(10, 10, 31, 0.3); // Warna lebih gelap dengan transparansi
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+// Optional: Menambahkan animasi subtle pada teks dengan warna yang lebih gelap
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(100, 100, 180, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(100, 100, 180, 0.8);
+  }
+}
+
+.glowing-text {
+  color: #e0e0f7; // Warna teks lebih terang untuk kontras
+  animation: textGlow 4s ease-in-out infinite;
+}
+
+.h1 {
+  font-weight: 900;
+}
+.navbar-brand {
+  font-weight: 700; /* Mengatur ketebalan font */
+  color: #ffffff !important; /* Gunakan variabel warna kustom */
+}
+.nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500; /* Warna teks putih untuk kontras yang baik */
+}
+
+.nav-link:hover {
+  color: #ffffff; /* Mengubah warna saat hover */
+}
+
+.nav-link.active {
+  color: #ffffff !important; /* Warna untuk link aktif */
+}
+
+.nav-link.disabled {
+  color: rgba(255, 255, 255, 0.5); /* Warna untuk link yang dinonaktifkan */
+}
+
+.form-control[type="search"] {
+  background: rgba(255, 255, 255, 0.1); /* Background transparan */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border transparan */
+  color: #ffffff; /* Warna teks */
+  padding: 0.5rem 1rem; /* Padding */
+  border-radius: 10px; /* Sudut yang halus */
+  backdrop-filter: blur(5px); /* Efek blur */
+  -webkit-backdrop-filter: blur(5px); /* Blur untuk Safari */
+  transition: all 0.3s ease-in-out; /* Animasi halus saat hover/focus */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+
+  /* Placeholder styling */
+  &::placeholder {
+    color: rgba(
+      255,
+      255,
+      255,
+      0.7
+    ); /* Placeholder dengan warna putih semi-transparan */
+  }
+
+  /* Hover effect */
+  &:hover {
+    background: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); /* Warna background saat hover sedikit lebih terang */
+    border-color: rgba(255, 255, 255, 0.5); /* Border lebih jelas saat hover */
+  }
+
+  /* Focus effect */
+  &:focus {
+    background: rgba(255, 255, 255, 0.3); /* Lebih terang saat fokus */
+    outline: none; /* Menghilangkan outline default */
+    border-color: rgba(255, 255, 255, 0.7); /* Border lebih jelas saat focus */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat fokus */
+  }
+}
+
+.navbar-glass {
+  background: rgba(
+    122,
+    28,
+    172,
+    0.2
+  ); /* Latar belakang ungu dengan transparansi */
+  backdrop-filter: blur(10px); /* Efek blur */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Untuk dukungan di Safari */ /* Border halus */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
+}
+
+.navbar-toggler {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Transparansi untuk glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Border halus */
+  backdrop-filter: blur(5px); /* Blur background */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.3); /* Lebih terang saat fokus */
+    outline: none; /* Menghilangkan outline default */
+    border-color: rgba(255, 255, 255, 0.7); /* Border lebih jelas saat focus */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat fokus */
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.8)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  /* Mengubah warna ikon menjadi putih semi-transparan */
+}
+
+// Variabel untuk efek glassmorphism
+$glass-bg-color: rgba(255, 255, 255, 0.1);
+$glass-border-color: rgba(255, 255, 255, 0.18);
+$glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+$glass-blur: 10px;
+
+// Mixin untuk efek glassmorphism
+@mixin glassmorphism {
+  background: $glass-bg-color;
+  backdrop-filter: blur($glass-blur);
+  -webkit-backdrop-filter: blur($glass-blur);
+  border: 1px solid $glass-border-color;
+  box-shadow: $glass-shadow;
+}
+
+// Custom container dengan efek glassmorphism
+.container-glass {
+  @extend .container;
+  @include glassmorphism;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+// Custom card dengan efek glassmorphism
+.card-glass {
+  @include glassmorphism;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .card-img-top {
+    border-bottom: 1px solid $glass-border-color;
+
+  }
+
+  .card-body {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .rating {
+    font-size: 0.9rem;
+    color: #ffd735;
+  }
+
+  .card-title {
+    color: #ffffff;
+  }
+
+  .card-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+.card-glass img {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card-glass:hover img {
+  transform: scale(1.1);
+}
+// Custom form inputs dengan efek glassmorphism
+.form-control-glass {
+  @extend .form-control;
+  @include glassmorphism;
+  color: #fff;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  }
+}
+
+// Custom button dengan efek glassmorphism
+.btn-glass {
+  @include glassmorphism;
+  color: #ffffff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+}
+
+.modal-backdrop {
+  background-color: rgba(122, 28, 172, 0.473);
+}
+
+.modal-dialog {
+  .glass-content {
+    @include glassmorphism;
+    border-radius: 15px;
+    color: #ffffff;
+
+    .modal-header, .modal-footer {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+  }
+}
+// Gaya untuk input glassmorphism
+.form-control-glass {
+  @include glassmorphism;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:read-only {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn-glass-primary {
+  @extend .btn-glass;
+  background: rgba(157, 13, 253, 0.3);
+
+  &:hover {
+    background: rgba(125, 13, 253, 0.5);
+  }
+}
+
+.btn-glass-secondary {
+  @extend .btn-glass;
+  background: rgba(108, 117, 125, 0.3);
+
+  &:hover {
+    background: rgba(108, 117, 125, 0.5);
+  }
+}
+
+// Media query untuk responsivitas
+@media (max-width: 768px) {
+  .container-glass,
+  .card-glass {
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
